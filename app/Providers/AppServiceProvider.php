@@ -24,5 +24,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+
+    }
+
+    public function HOME()
+    {
+        return redirect(route('index'));
     }
 }

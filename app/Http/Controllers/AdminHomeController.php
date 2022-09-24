@@ -18,12 +18,18 @@ class AdminHomeController extends Controller
      */
     public function index()
     {
+        $products = product::all();
+        $projects = counter::all();
 
         if (Auth::user()) {
 
-            return view("admin.index");
+            return view("admin.index", compact('products'), [
+                'projects' => $projects
+            ]);
         } else {
-            return redirect("loginadmin");
+            return redirect("loginadmin", compact('products'), [
+                'projects' => $projects
+            ]);
         }
 
     }

@@ -1,67 +1,67 @@
-<!-- Left side column. contains the logo and sidebar -->
-<aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-        <!-- Sidebar user panel -->
-        <div class="user-panel">
-            <div class="pull-left image">
-                <img src="{{asset('assets')}}/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
-            </div>
-            <div class="pull-left info">
-                <p>{{Auth::user()->name}}</p>
-                <a href="/logout" class="text-uppercase">logout</a>
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-        </div>
-        <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group" style="padding: 15px">
-                <input type="text" name="q" class="form-control" placeholder="Search..."/>
-                <span class="input-group-btn">
-                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i
-                        class="fa fa-search"></i></button>
-              </span>
-            </div>
-        </form>
-        <!-- /.search form -->
-        <!-- sidebar menu: : style can be found in sidebar.less -->
-        <ul class="sidebar-menu">
-            <li class="header">MAIN NAVIGATION</li>
-            <li class="active treeview">
-                <a href="{{route('admin.dash')}}">
-                    <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
-                </a>
+<!--SideBar start-->
+<aside class="sidebar" id="sidebar">
+    <div class="logo">
+        <h2 class=""><i class="fa-solid fa-screwdriver-wrench" style="color: rgb(123, 124, 124);"></i>
+            <span>Control <span style="color: rgb(123, 124, 124);">Panel</span></span></h2>
+        <hr/>
 
+    </div>
+    <div class="items">
+        <ul>
+            <li>
+                </button>
+                <a href="{{route('admin.index')}}" class="active sidebar-links"
+                ><i class="fa-solid fa-house-chimney"></i> <span>Dashboard</span></a
+                >
+                <a href="#" class="sidebar-links" id="collapse1"
+                   data-bs-toggle="collapse"
+                   data-bs-target="#category-collapse" aria-expanded="false"
+                ><i class="fa-solid fa-bars-staggered"></i> <span>Categories</span><i class="fa-solid fa-sort-down"
+                                                                                      id="arrowDown"></i></a
+                >
+                <div class="collapse" id="category-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="{{route('admin.category.index')}}" class="collapse-link text-decoration-none"><i
+                                    class="fa-solid fa-rectangle-list"></i> <span>Category List</span></a></li>
+                        <li><a href="{{route('admin.category.create')}}" class="collapse-link text-decoration-none"><i
+                                    class="fa-solid fa-circle-plus"></i><span> Add Category</span></a></li>
+                    </ul>
+                </div>
+                <a href="#" class="sidebar-links" id="collapse2" data-bs-toggle="collapse"
+                   data-bs-target="#product-collapse" aria-expanded="false"
+                ><i class="fa-solid fa-box"></i> <span>Products</span> <i class="fa-solid fa-sort-down"
+                                                                          id="arrowDown"></i></a
+                >
+                <div class="collapse" id="product-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="{{route('admin.product.index')}}" class="collapse-link text-decoration-none"><i
+                                    class="fa-solid fa-rectangle-list"></i> <span> Product List</span></a></li>
+                        <li><a href="{{route('admin.product.create')}}" class="collapse-link text-decoration-none"><i
+                                    class="fa-solid fa-plus"></i>
+                                <span>Add product</span></a></li>
+                    </ul>
+                </div>
+                <a href="#" class="sidebar-links" id="collapse2" data-bs-toggle="collapse"
+                   data-bs-target="#user-collapse" aria-expanded="false"
+                ><i class="fa-solid fa-user-gear"></i> <span>Users</span> <i class="fa-solid fa-sort-down"
+                                                                             id="arrowDown"></i></a
+                >
+                <div class="collapse" id="user-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="{{route('admin.user.index')}}" class="collapse-link text-decoration-none"><i
+                                    class="fa-solid fa-rectangle-list"></i> <span> User List</span></a></li>
+                        <li><a href="#" class="collapse-link text-decoration-none"><i class="fa-solid fa-plus"></i>
+                                <span>Add User</span></a></li>
+                    </ul>
+                </div>
+                <a href="{{route('admin.setting')}}" class="sidebar-links"
+                ><i class="fa-solid fa-gear"></i><span> Settings</span></a
+                >
             </li>
-
-
-            <li class="treeview">
-                <a href="{{route('admin.category.index')}}">
-                    <i class="fa fa-folder"></i> <span>Categories</span>
-
-                </a>
-            </li>
-            <li class="treeview">
-                <a href="{{route('admin.product.index')}}">
-                    <i class="fa fa-star-o"></i> <span>Products</span>
-
-                </a>
-            </li>
-            <li class="treeview">
-                <a href="{{route('admin.setting')}}">
-                    <i class="fa fa-gear"></i> <span>Settings</span>
-
-                </a>
-            </li>
-            <li class="treeview">
-                <a href="{{route('admin.user.index')}}">
-                    <i class="fa fa-user"></i> <span>Users</span>
-
-                </a>
-            </li>
-
-
         </ul>
-    </section>
-    <!-- /.sidebar -->
+    </div>
+    </div>
 </aside>
+
+
+<!--SideBar end-->

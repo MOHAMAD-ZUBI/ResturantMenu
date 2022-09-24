@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Changa";
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+#reset-container {
+  height: 100vh;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  background: #ad5389; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #3c1053,
+    #ad5389
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #3c1053,
+    #ad5389
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#reset-box {
+  background-color: #ffff;
+  max-height: 100%;
+  max-width: 1100px;
+  width: 100%;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.img-div {
+  max-height: 600px;
+}
+
+.img-div img {
+  height: 100%;
+  width: 600px;
+}
+
+.forms {
+  text-align: center;
+  max-width: 460px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.forms h1 {
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+.reset-form {
+  max-width: 420px;
+  width: 100%;
+}
+
+#form {
+  margin-bottom: 20px;
+}
+
+.resetBtn {
+  background-color: #3c1053;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.resetBtn:hover {
+  background-color: #64178d;
+  transition: all 0.5s eas;
+}
+
+input:focus {
+  border: 1px solid #8e10c0 !important;
+}
+input:focus ~ label {
+  color: #8e10c0 !important;
+}
+
+#codeForm {
+  display: none;
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,10 +1,13 @@
 <?php
 
 use App\Http\Controllers\AdminHomeController;
+use App\Http\Controllers\AdminRestaurantController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SampleController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,17 +24,20 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/loginadmin', [HomeController::class, 'loginadmin'])->name('loginadmin');
 Route::post('/loginadmincheck', [HomeController::class, 'loginadmincheck'])->name('loginadmincheck');
 Route::get('/logout', [HomeController::class, 'logout'])->name('logoutuser');
+//************** HOME LOGIN AND REGISTER ROUTS **************//
+Route::get('/registeruser', [HomeController::class, 'registeruser'])->name('registeruser');
 Route::get('/loginuser', [HomeController::class, 'loginuser'])->name('loginuser');
+Route::post('/validate_registration', [SampleController::class, 'validate_registration'])->name('sample.validate_registration');
+Route::post('/validate_login', [SampleController::class, 'validate_login'])->name('sample.validate_login');
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+//************** HOME USER RESTAURANT ROUTS **************//
+Route::get('/createres', [HomeController::class, 'restaurant'])->name('createres')->middleware('auth');
+Route::post('/resstore', [HomeController::class, 'storeeres'])->name('resstore')->middleware('auth');
+Route::get('/restSettings', [HomeController::class, 'resSettings'])->name('res.setting')->middleware('auth');
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard')->middleware('auth');
+Route::get('/pendingpage', [HomeController::class, 'pending'])->name('pendingpage')->middleware('auth');
+Route::get('/userDash', [HomeController::class, 'userDash'])->name('userDash')->middleware('auth');
+
 
 Route::middleware('auth')->group(function () {
 //**************ADMIN ROUTES**************
@@ -73,7 +79,13 @@ Route::middleware('auth')->group(function () {
             Route::get('/destroyrole/{uid}/{rid}', 'destroyrole')->name('destroyrole');
 
         });
+        //**************ADMIN RESTAURANT ROUTES**************
+        Route::prefix('/restaurant')->name('restaurant.')->controller(AdminRestaurantController::class)->group(function () {
+            Route::get('/', 'index')->name('index');
+            Route::post('/store', 'store')->name('store');
+            Route::post('/', 'update')->name('update');
 
+        });
     });
 });
 

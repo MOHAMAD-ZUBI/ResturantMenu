@@ -1,0 +1,120 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Changa";
+  scroll-behavior: smooth;
+}
+
+:root {
+  --trans-05: all 0.5s ease;
+}
+
+.resInfo {
+  display: flex;
+  justify-content: space-between;
+  max-width: 230px;
+  padding-top: 5px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  align-items: center;
+}
+
+.resInfo span {
+  color: #9e35cf !important;
+}
+.resInfo .img-div {
+  border-radius: 30px;
+  max-width: 60px;
+}
+
+svg {
+  color: #9e35cf !important;
+}
+aside {
+  background-color: rgb(255, 255, 255) !important;
+  height: 100vh;
+  box-shadow: 5px 5px 5px rgb(223, 223, 223);
+  position: fixed;
+  max-width: 256px;
+  transition: var(--trans-05);
+}
+
+#container {
+  position: relative;
+  left: 256px;
+  width: calc(100% - 256px);
+}
+
+#container-fluid {
+  margin: 20px;
+  background-color: #ffff;
+  max-height: 100%;
+  max-width: 100%;
+  padding: 30px;
+}
+.forms {
+  background-color: rgb(245, 245, 245);
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 5px 5px 60px rgb(223, 223, 223);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.forms h1 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #9e35cf !important;
+}
+
+.forms input {
+  margin-bottom: 20px;
+}
+
+input:focus {
+  border: 1px solid #8e10c0 !important;
+}
+input:focus ~ label {
+  color: #8e10c0 !important;
+}
+
+textarea:focus {
+  border: 1px solid #8e10c0 !important;
+}
+textarea:focus ~ label {
+  color: #8e10c0 !important;
+}
+
+label {
+  background: rgb(245, 245, 245) !important;
+}
+
+.forms textarea {
+  margin-bottom: 20px;
+  max-height: 200px;
+}
+
+.updateBtn {
+  background-color: #3c1053;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  padding: 10px 0;
+  margin-top: 15px;
+}
+
+.updateBtn:hover {
+  background-color: #64178d;
+  transition: all 0.5s ease;
+}
+
+#container nav {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  height: 60px;
+  background-color: white;
+  box-shadow: 5px 5px 5px rgb(223, 223, 223);
+}

@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             // new created ones
             $table->foreignId('parent_id')->default(0);
+            $table->foreignId('restaurant_id')->nullable();
             $table->string('title')->nullable();
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();

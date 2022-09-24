@@ -1,79 +1,87 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link href="{{asset('assets/admin/css/bootstrap.css')}}" rel="stylesheet"/>
-    <!-- FONTAWESOME STYLES-->
-    <link href="{{asset('assets/admin/css/font-awesome.css')}}" rel="stylesheet"/>
+    <title>Login V1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{{asset('assets')}}/login/images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/login/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+          href="{{asset('assets')}}/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/login/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/login/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/login/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/login/css/util.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/login/css/main.css">
+    <!--===============================================================================================-->
 </head>
 <body>
-<div class="section">
 
-    <div class="container">
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-pic js-tilt" data-tilt>
+                <img src="{{asset('assets')}}/login/images/img-01.png" alt="IMG">
+            </div>
 
-        <div class="row">
-            <form action="{{route('loginadmincheck')}}" method="post">
-                @include('home.messages')
+            <form class="login100-form validate-form" method="post" action="{{route('loginadmincheck')}}">
+                @include("home.messages")
                 @csrf
-                <h3>Login to your Account</h3>
-                <hr>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" name="email" class="form-control" id="exampleInputEmail1"
-                           aria-describedby="emailHelp" placeholder="Enter email">
+
+                <span class="login100-form-title">
+						Member Login
+					</span>
+
+                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <input class="input100" type="text" name="email" placeholder="Email">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" name="password" class="form-control" id="exampleInputPassword1"
-                           placeholder="Password">
+
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                    <input class="input100" type="password" name="password" placeholder="Password">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
                 </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn">
+                        Login
+                    </button>
                 </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-                <a href="/registeruser" type="submit" class="text-center">Register </a>
             </form>
         </div>
     </div>
 </div>
-</body>
 
-<script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 
-<!-- Bootstrap 3.3.2 -->
-<link href="{{asset('assets')}}/admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-<!-- FontAwesome 4.3.0 -->
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"
-      type="text/css"/>
-<!-- Ionicons 2.0.0 -->
-<link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css"/>
-<!-- Theme style -->
-<link href="{{asset('assets')}}/admin/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css"/>
-<!-- AdminLTE Skins. Choose a skin from the css/skins
-     folder instead of downloading all of them to reduce the load. -->
-<link href="{{asset('assets')}}/admin/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css"/>
-<!-- iCheck -->
-<link href="{{asset('assets')}}/admin/plugins/iCheck/flat/blue.css" rel="stylesheet" type="text/css"/>
-<!-- Morris chart -->
-<link href="{{asset('assets')}}/admin/plugins/morris/morris.css" rel="stylesheet" type="text/css"/>
-<!-- jvectormap -->
-<link href="{{asset('assets')}}/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet"
-      type="text/css"/>
-<!-- Date Picker -->
-<link href="{{asset('assets')}}/admin/plugins/datepicker/datepicker3.css" rel="stylesheet" type="text/css"/>
-<!-- Daterange picker -->
-<link href="{{asset('assets')}}/admin/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet"
-      type="text/css"/>
-<!-- bootstrap wysihtml5 - text editor -->
-<link href="{{asset('assets')}}/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet"
-      type="text/css"/>
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-
+<!--===============================================================================================-->
+<script src="{{asset('assets')}}/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="{{asset('assets')}}/login/vendor/bootstrap/js/popper.js"></script>
+<script src="{{asset('assets')}}/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="{{asset('assets')}}/login/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="{{asset('assets')}}/login/vendor/tilt/tilt.jquery.min.js"></script>
+<script>
+    $('.js-tilt').tilt({
+        scale: 1.1
+    })
+</script>
+<!--===============================================================================================-->
+<script src="{{asset('assets')}}/login/js/main.js"></script>
 
 </body>
 </html>

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
@@ -101,7 +103,10 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $userid = Auth::user()->id;
+        $x = restaurant::where('user_id', '=', $userid)->first();
         $data = new Category();
+        $data->restaurant_id = $x->id;
         $data->title = $request->title;
         $data->parent_id = $request->parent_id;
         $data->keywords = $request->keywords;

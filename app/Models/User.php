@@ -63,4 +63,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Role::class, 'role_user');
     }
+
+    public function restaurants()
+    {
+        return $this->hasOne(restaurant::class);
+
+    }
 }
